@@ -1,0 +1,21 @@
+{
+  "name": "vite-typescript-starter",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "~5.7.2",
+    "vite": "^6.1.0"
+  },
+  "dependencies": {
+    "@mediapipe/selfie_segmentation": "^0.1.1675465747",
+    "@tensorflow-models/body-segmentation": "^1.0.2",
+    "@tensorflow/tfjs-converter": "^4.22.0",
+    "@tensorflow/tfjs-core": "^4.22.0"
+  }
+}
