@@ -1,10 +1,8 @@
-Below is an example of a detailed README file with a cool layout that explains what your library does, how to install and use it, and how to build it from source. You can customize it further as needed.
 
----
 
 # Video BG Remover
 
-[![npm version](https://www.npmjs.com/package/video-bg-remover) 
+[![npm version](https://img.shields.io/npm/v/video-bg-remover.svg)](https://www.npmjs.com/package/video-bg-remover)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Video BG Remover is a lightweight npm library that leverages TensorFlow.js and MediaPipe Selfie Segmentation to remove or replace video backgrounds in real time. It also provides functionality to record the processed video and download it—all with a simple API.
@@ -194,6 +192,3 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 - [MediaPipe Selfie Segmentation](https://github.com/tensorflow/tfjs-models/tree/master/body-segmentation)
 - Thanks to the open-source community for inspiration and feedback.
 
----
-
-This README provides a comprehensive guide to your library with a cool, modern layout. Adjust badge URLs, repository links, and other specifics to fit your project details before publishing.
