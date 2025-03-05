@@ -5,7 +5,6 @@ Below is an example of a detailed README file with a cool layout that explains w
 # Video BG Remover
 
 [![npm version](https://www.npmjs.com/package/video-bg-remover) 
-[![Build Status](https://travis-ci.com/yourusername/video-bg-remover.svg?branch=main)](https://travis-ci.com/yourusername/video-bg-remover)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 Video BG Remover is a lightweight npm library that leverages TensorFlow.js and MediaPipe Selfie Segmentation to remove or replace video backgrounds in real time. It also provides functionality to record the processed video and download it—all with a simple API.
