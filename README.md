@@ -4,7 +4,7 @@ Below is an example of a detailed README file with a cool layout that explains w
 
 # Video BG Remover
 
-[![npm version](https://badge.fury.io/js/video-bg-remover.svg)](https://badge.fury.io/js/video-bg-remover)  
+[![npm version]([https://badge.fury.io/js/video-bg-remover.svg)](https://badge.fury.io/js/video-bg-remover](https://www.npmjs.com/package/video-bg-remover))  
 [![Build Status](https://travis-ci.com/yourusername/video-bg-remover.svg?branch=main)](https://travis-ci.com/yourusername/video-bg-remover)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
