@@ -48,7 +48,7 @@ To run the app locally:
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/yourusername/video-bg-remover.git
+   git clone https://github.com/azizaydi23/video-bg-remover.git
    cd video-bg-remover
    ```
 
