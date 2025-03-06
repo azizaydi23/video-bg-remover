@@ -2,139 +2,48 @@
 
 # Video BG Remover
 
-[![npm version](https://img.shields.io/npm/v/video-bg-remover.svg)](https://www.npmjs.com/package/video-bg-remover)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+A web application that leverages TensorFlow.js and MediaPipe Selfie Segmentation to remove or replace video backgrounds in real time. With Video BG Remover, users can upload a video, have the background removed automatically, preview the processed video, and download the final output as a WebM file.
 
-Video BG Remover is a lightweight npm library that leverages TensorFlow.js and MediaPipe Selfie Segmentation to remove or replace video backgrounds in real time. It also provides functionality to record the processed video and download it—all with a simple API.
+[![Demo](https://img.shields.io/badge/Demo-View-blue)](https://your-demo-url.com)  
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
 ## Table of Contents
 
+- [Overview](#overview)
 - [Features](#features)
-- [Installation](#installation)
 - [Usage](#usage)
-  - [HTML Setup](#html-setup)
-  - [JavaScript/TypeScript Usage](#javascripttypescript-usage)
-- [API Reference](#api-reference)
-- [Building from Source](#building-from-source)
+  - [Running the App](#running-the-app)
+  - [Demo Interface](#demo-interface)
+- [How It Works](#how-it-works)
+- [Project Structure](#project-structure)
 - [Contributing](#contributing)
 - [License](#license)
 - [Acknowledgements](#acknowledgements)
 
 ---
 
-## Features
+## Overview
 
-- **Real-time Background Removal:** Process video frames on the fly to remove or replace backgrounds.
-- **MediaRecorder Integration:** Record the processed video directly from the canvas.
-- **Download Processed Video:** Preview and download your final video as a WebM file.
-- **TypeScript Support:** Written in TypeScript with complete type definitions.
-- **Easy Integration:** Plug into any web project with minimal setup.
+Video BG Remover is a real-time web application built with TypeScript, TensorFlow.js, and MediaPipe that processes videos to remove the background. The app records the processed video directly from the canvas, shows a live preview, and lets you download the final video. It’s perfect for virtual meetings, creative projects, or simply experimenting with background removal technology.
 
 ---
 
-## Installation
+## Features
 
-Install the package via npm:
-
-```bash
-npm install video-bg-remover
-```
+- **Real-Time Processing:** Remove or replace video backgrounds on the fly.
+- **Record & Download:** Capture the processed video from the canvas and download it as a WebM file.
+- **Intuitive UI:** A modern, responsive interface built with Tailwind CSS.
+- **TypeScript-Powered:** Written in TypeScript with robust type definitions and modern development practices.
 
 ---
 
 ## Usage
 
-### HTML Setup
+### Running the App
 
-Create an HTML file (e.g., `index.html`) with the following structure:
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Video Background Removal Demo</title>
-    <link href="https://cdn.tailwindcss.com" rel="stylesheet">
-  </head>
-  <body class="flex flex-col items-center justify-center h-screen bg-gray-100 p-4">
-    <h1 class="text-2xl font-bold mb-4">Video Background Removal Demo</h1>
-    <input id="videoInput" type="file" accept="video/*" class="mb-4 p-2 border rounded" />
-    <video id="videoElement" class="w-full max-w-lg mb-4" controls></video>
-    <canvas id="canvasElement" class="w-full max-w-lg border" hidden></canvas>
-    <button id="removeBgButton" class="mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700">
-      Remove Background
-    </button>
-    <!-- Processed video preview and download button -->
-    <video id="previewVideo" class="w-full max-w-lg mt-4 border" controls style="display: none;"></video>
-    <a id="downloadBtn" download="bg_removed_video.webm" class="mt-4 px-4 py-2 bg-green-500 text-white rounded hover:bg-green-700" style="display: none;">
-      Download Processed Video
-    </a>
-    <script type="module" src="./app.js"></script>
-  </body>
-</html>
-```
-
-### JavaScript/TypeScript Usage
-
-In your project, import and use the library as follows:
-
-```ts
-// app.ts
-import { VideoBackground } from 'video-bg-remover';
-
-const videoBg = new VideoBackground();
-
-document.addEventListener('DOMContentLoaded', () => {
-  const videoInput = document.getElementById('videoInput') as HTMLInputElement;
-  const videoElement = document.getElementById('videoElement') as HTMLVideoElement;
-  const canvasElement = document.getElementById('canvasElement') as HTMLCanvasElement;
-  const removeBgButton = document.getElementById('removeBgButton') as HTMLButtonElement;
-
-  videoInput.addEventListener('change', () => {
-    if (videoInput.files && videoInput.files[0]) {
-      const fileURL = URL.createObjectURL(videoInput.files[0]);
-      videoElement.src = fileURL;
-      videoElement.play();
-    }
-  });
-
-  removeBgButton.addEventListener('click', () => {
-    canvasElement.hidden = false; // Show the canvas
-    videoBg.remove(canvasElement, videoElement);
-  });
-});
-```
-
----
-
-## API Reference
-
-### `createSegmenter()`
-
-Creates and returns a MediaPipe Selfie Segmentation segmenter.
-
-- **Returns:** A promise that resolves to the segmenter instance.
-
-### `VideoBackground` Class
-
-#### Methods
-
-- **`remove(canvas: HTMLCanvasElement, video: HTMLVideoElement): Promise<void>`**  
-  Processes the video to remove the background, draws processed frames on the canvas, and records the output.
-
-- **`stop(): void`**  
-  Stops the video processing and recording.
-
-The recording functionality automatically generates a preview and download link for the processed video when the video ends or is paused.
-
----
-
-## Building from Source
-
-To build the project from source:
+To run the app locally:
 
 1. **Clone the Repository:**
 
@@ -149,34 +58,51 @@ To build the project from source:
    npm install
    ```
 
-3. **Build the Project:**
+3. **Start the Development Server:**
 
    ```bash
-   npm run build
+   npm run dev
    ```
 
-4. **Test Your Build:**
+   Open your browser and navigate to `http://localhost:3000` (or your configured port) to view the app in action.
 
-   You can test your built library by linking it locally in another project:
+### Demo Interface
 
-   ```bash
-   npm link
-   # In your consuming project:
-   npm link video-bg-remover
-   ```
+The app’s interface includes:
+- **Video Upload:** Choose a video file to upload.
+- **Video Preview:** Watch your selected video in a standard video player.
+- **Canvas Display:** See the processed video with the background removed.
+- **Control Button:** Click the “Remove Background” button to start processing.
+- **Processed Video Preview & Download:** After processing, view a preview of the final video and download it as a WebM file.
 
 ---
 
+## How It Works
+
+1. **Upload:**  
+   Users upload a video file, which is then loaded and played in a video element.
+
+2. **Processing:**  
+   The app uses MediaPipe Selfie Segmentation (via TensorFlow.js) to generate a segmentation mask for each video frame. The mask is used to remove the background by drawing the processed frame onto a canvas.
+
+3. **Recording:**  
+   The canvas’s stream is recorded in real time using the MediaRecorder API. When the video ends or is paused, recording stops.
+
+4. **Preview & Download:**  
+   The recorded video is then previewed on the app, and a download button allows users to save the processed video locally.
+
+---
+
+
 ## Contributing
 
-Contributions are welcome! Please follow these steps:
-
+Contributions are welcome! To contribute:
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature/your-feature`).
 3. Commit your changes.
-4. Push your branch and open a Pull Request.
+4. Push your branch and open a Pull Request with a detailed description of your changes.
 
-For major changes, please open an issue first to discuss what you would like to change.
+For major changes, please open an issue first to discuss what you would like to modify.
 
 ---
 
@@ -190,5 +116,5 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 - [TensorFlow.js](https://www.tensorflow.org/js)
 - [MediaPipe Selfie Segmentation](https://github.com/tensorflow/tfjs-models/tree/master/body-segmentation)
-- Thanks to the open-source community for inspiration and feedback.
+- Thanks to the open-source community for inspiration, support, and feedback.
 
