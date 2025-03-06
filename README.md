@@ -4,7 +4,7 @@
 
 A web application that leverages TensorFlow.js and MediaPipe Selfie Segmentation to remove or replace video backgrounds in real time. With Video BG Remover, users can upload a video, have the background removed automatically, preview the processed video, and download the final output as a WebM file.
 
-[![Demo](https://img.shields.io/badge/Demo-View-blue)](https://your-demo-url.com)  
+[![Demo](https://img.shields.io/badge/Demo-View-blue)](video-bg-remover.netlify.app/)  
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
